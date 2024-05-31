@@ -1,0 +1,86 @@
+@use '../abstract/variaveis';
+@use '../abstract/mixins';
+
+header {
+    background: variaveis.$gradiente-primario;
+    padding: 2rem;
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
+
+        .linha {
+            border-top: 1px solid black;
+            width: 80%;
+        }
+
+        ul {
+            display: inline-flex;
+            gap: 2rem;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            transition: .5s;
+            text-decoration: none;
+            @include mixins.ff-fs-cl(variaveis.$ft-textos, 1rem, variaveis.$cor-primaria);
+            font-weight: 500;
+
+            &:hover {
+                font-weight: 600;
+                font-size: 1.05rem;
+            }
+        }
+    }
+
+    #home {
+        max-width: 1440px;
+        @include mixins.margem-central(80%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .textos-home {
+            max-width: 464px;
+            h1 {
+                font-size: 42px;
+                color: variaveis.$cor-primaria;
+                margin-bottom: 2rem;
+                font-family: variaveis.$ft-titulos;
+                span {
+                    color: variaveis.$cor-secundaria;
+                }
+            }
+            
+            button {
+                transition: .5s;
+                width: 280px;
+                height: 66px;
+                border-radius: 66px;
+                font-family: variaveis.$ft-textos;
+                font-weight: 600;
+                font-size: 1.3rem;
+                background-color: variaveis.$cor-secundaria;
+                color: white;
+                border: none;
+                outline: none;
+            }
+
+            & button:hover {
+                background-color: variaveis.$cor-terciaria;
+            }
+        }
+
+        .img-home {
+            max-width: 474px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
